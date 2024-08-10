@@ -1,9 +1,33 @@
-// XPath v3.1
-// Author--Ken Domino
-// Date--4 June 2020
-//
-// This is a faithful implementation of the XPath version 3.1 grammar
-// from the spec at https://www.w3.org/TR/2017/REC-xpath-31-20170321/
+/*
+ * This file is adapted from the Antlr4 Java grammar which has no license
+ *
+ *     XPath v3.1
+ *     Author--Ken Domino
+ *     Date--4 June 2020
+ *
+ *     This is a faithful implementation of the XPath version 3.1 grammar
+ *     from the spec at https://www.w3.org/TR/2017/REC-xpath-31-20170321/
+ *
+ *
+ * Subsequent modifications by the OPath community have been done under the Apache License v2:
+ *
+ *  Licensed to the Apache Software Foundation (ASF) under one
+ *  or more contributor license agreements.  See the NOTICE file
+ *  distributed with this work for additional information
+ *  regarding copyright ownership.  The ASF licenses this file
+ *  to you under the Apache License, Version 2.0 (the
+ *  "License"); you may not use this file except in compliance
+ *  with the License.  You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing,
+ *  software distributed under the License is distributed on an
+ *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *  KIND, either express or implied.  See the License for the
+ *  specific language governing permissions and limitations
+ *  under the License.
+ */
 
 // $antlr-format alignTrailingComments true, columnLimit 150, maxEmptyLinesToKeep 1, reflowComments false, useTab false
 // $antlr-format allowShortRulesOnASingleLine true, allowShortBlocksOnASingleLine true, minEmptyLines 0, alignSemicolons ownLine

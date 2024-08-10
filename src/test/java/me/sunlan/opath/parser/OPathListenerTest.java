@@ -18,7 +18,7 @@ class OPathListenerTest {
         OPathParser.OpathContext opath = oPathParser.opath();
 
         ParseTreeWalker walker = new ParseTreeWalker();
-        OPathListener listener = new OPathListener();
+        OPathListener<String> listener = new OPathListener<>();
         walker.walk(listener, opath);
         assertEquals("/bookstore/book[price>35]/title<EOF>", listener.getResult());
     }

@@ -2,6 +2,7 @@ package me.sunlan.opath.parser;
 
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.atn.PredictionMode;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,7 @@ class OPathListenerTest {
     public void testParsing() {
         OPathLexer oPathLexer = new OPathLexer(CharStreams.fromString("/bookstore/book[price>35]/title"));
         OPathParser oPathParser = new OPathParser(new CommonTokenStream(oPathLexer));
+        oPathParser.getInterpreter().setPredictionMode(PredictionMode.SLL);
 
         OPathParser.OpathContext opath = oPathParser.opath();
 

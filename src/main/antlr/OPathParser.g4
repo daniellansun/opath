@@ -32,11 +32,11 @@
 // $antlr-format alignTrailingComments true, columnLimit 150, minEmptyLines 1, maxEmptyLinesToKeep 1, reflowComments false, useTab false
 // $antlr-format allowShortRulesOnASingleLine false, allowShortBlocksOnASingleLine true, alignSemicolons hanging, alignColons hanging
 
-parser grammar XPath31Parser;
+parser grammar OPathParser;
 
 options {
-    tokenVocab = XPath31Lexer;
-    superClass = XPath31ParserBase;
+    tokenVocab = OPathLexer;
+    superClass = OPathParserBase;
 }
 
 // [1]

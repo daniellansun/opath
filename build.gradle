@@ -19,6 +19,7 @@
 
 plugins {
     id 'java'
+    id 'antlr'
 }
 
 group = 'me.sunlan'
@@ -35,9 +36,38 @@ repositories {
 }
 
 dependencies {
+    antlr "me.sunlan:antlr4:${version_antlr4}"
+
     testImplementation platform("org.junit:junit-bom:${version_junit}")
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
+
+generateGrammarSource {
+    maxHeapSize = '1g'
+    outputs.cacheIf { true }
+
+    final PARSER_PACKAGE_NAME = 'me.sunlan.opath.parser'
+    arguments += ["-visitor", "-no-listener", "-package", PARSER_PACKAGE_NAME]
+
+    doLast {
+        def parserFilePattern = 'XPath*'
+        def outputPath = generateGrammarSource.outputDirectory.canonicalPath
+        println "outputPath: ${outputPath}"
+        def parserPackagePath = "${outputPath}/${PARSER_PACKAGE_NAME.replace('.', '/')}"
+        file(parserPackagePath).mkdirs()
+        copy {
+            from outputPath
+            into parserPackagePath
+            include parserFilePattern
+        }
+        delete fileTree(outputPath) {
+            include parserFilePattern
+        }
+    }
+}
+
+compileJava.dependsOn generateGrammarSource
+
 
 test {
     useJUnitPlatform()

@@ -40,7 +40,7 @@ options {
 }
 
 // [1]
-xpath
+opath
     : expr EOF
     ;
 

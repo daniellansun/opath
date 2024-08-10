@@ -48,7 +48,7 @@ def generateGrammarSourceTask = tasks.named("generateGrammarSource") {
     outputDirectory = layout.buildDirectory.dir("generated/sources/antlr4").get().asFile
 
     final PARSER_PACKAGE_NAME = 'me.sunlan.opath.parser'
-    arguments += ["-visitor", "-no-listener", "-package", PARSER_PACKAGE_NAME]
+    arguments += ["-no-visitor", "-listener", "-package", PARSER_PACKAGE_NAME]
 
     doLast {
         def parserFilePattern = 'OPath*'
